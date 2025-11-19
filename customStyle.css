@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --background: whitesmoke;
+  --primary: #dedede;
+  --secondary: #4d4d4d;
+  --accent: #f25623;
+  --success: rgb(89, 199, 89);
+}
+.darkmode {
+  --background: #171717;
+  --primary: #dedede;
+  --secondary: #4d4d4d;
+  --accent: #f25623;
+  --success: rgb(67, 146, 67);
+}
+
+#topic {
+  padding: 2rem;
+  width: 100%;
+  min-height: fit-content;
+  height: 5rem;
+  border-radius: 0.5rem;
+  align-content: center;
+  justify-content: center;
+  font-weight: 500;
+  line-height: 2rem;
+  font-size: 1.5rem;
+}
+
+#sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+#sidebar::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 4px;
+}

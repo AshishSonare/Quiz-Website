@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Application</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="customStyle.css" />
+    <style></style>
+  </head>
+  <body class="overflow-x-hidden">
+    <!-- Welcome Section here -->
+    <section id="welcome" class="bg-[var(--background)] hidden">
+      <div
+        id="welcome-section-container"
+        class="w-screen h-screen grid place-content-center"
+      >
+        <div
+          id="welcome-container"
+          class="grid place-content-center w-[60vw] h-[80vh] rounded-lg bg-[var(--primary)]"
+        >
+          <!-- Quiz heading here -->
+          <div
+            id="heading"
+            class="font-semibold text-8xl mb-8 justify-center align-center"
+          >
+            <h2 class="">Quiz</h2>
+          </div>
+
+          <!-- Let's start button here -->
+          <div id="start-btn-container" class="m-auto">
+            <button
+              id="start-btn"
+              class="py-2 px-4 bg-[var(--success)] rounded-lg shadow-lg m-auto"
+            >
+              Let's Start ➡️
+            </button>
+          </div>
+        </div>
+
+        <dialog id="quiz-subject" class="m-auto p-8 rounded-lg">
+          <div
+            id="topics-container"
+            class="grid place-content-center gap-8 h-fit w-fit"
+          >
+            <h2 class="text-6xl md:whitespace-nowrap">
+              Choose your Quiz topic from below.
+            </h2>
+
+            <div id="topic-container" class="grid md:grid-cols-2 gap-4">
+              <div id="topic" class="bg-[var(--primary)]">Computer</div>
+              <div id="topic" class="bg-[var(--primary)]">Science</div>
+              <div id="topic" class="bg-[var(--primary)]">Geography</div>
+              <div id="topic" class="bg-[var(--primary)]">
+                General Knowledge
+              </div>
+            </div>
+            <!-- <button id="close-dialog" class="">close</button> -->
+          </div>
+        </dialog>
+      </div>
+    </section>
+
+    <!-- Quiz Section Here -->
+    <section id="Quiz" class="w-screen h-screen bg-[var(--background)] hidden">
+      <!-- Header visible on the quiz section -->
+      <header
+        class="flex w-full h-[10%] items-center justify-between p-4 bg-gray-800 text-white"
+      >
+        <!-- Hamburger icon (only visible on mobile) -->
+        <button id="menu-btn" class="lg:hidden text-2xl">☰</button>
+        <h1
+          id="Quiz-App"
+          class="text-[clamp(1.8rem,calc(10vw+1rem),3rem)] font-bold"
+        >
+          Quiz App
+        </h1>
+      </header>
+
+      <!-- Main body of the quiz section -->
+
+      <div
+        id="quiz-main"
+        class="w-screen h-[90%] p-4 grid grid-cols-1 md:grid-cols-8 gap-4"
+      >
+        <div
+          id="sidebar"
+          class="bg-[var(--primary)] w-2/3 md:w-full h-screen md:h-full fixed top-0 left-0 transform -translate-x-full transition-transform duration-300 md:translate-x-0 md:relative md:col-span-2 rounded-lg z-50 overflow-y-auto"
+        >
+          <ul
+            id="sidebar-items"
+            class="font-semibold text-xl ml-12 mt-12 grid gap-4"
+          ></ul>
+        </div>
+        <div
+          id="backdrop"
+          class="fixed inset-0 bg-black bg-opacity-50 hidden md:hidden"
+        ></div>
+
+        <div
+          id="question-answer"
+          class="w-full h-full md:col-span-6 grid grid-rows-7 gap-4 rounded-lg"
+        >
+          <div
+            id="question"
+            class="bg-[var(--primary)] row-span-2 rounded-lg"
+          ></div>
+          <div
+            id="options"
+            class="bg-[var(--primary)] row-span-4 rounded-lg"
+          ></div>
+          <div
+            id="nav-btns"
+            class="bg-[var(--primary)] text-center row-span-1 rounded-lg justify-around items-center inline-flex"
+          >
+            <div
+              id="previous"
+              class="py-2 px-4 w-[clamp(2rem,calc(10vw+2rem),10rem)] bg-[var(--success)] rounded-lg shadow-lg"
+            >
+              Previous
+            </div>
+            <div
+              id="next"
+              class="py-2 px-4 w-[clamp(2rem,calc(10vw+2rem),10rem)] bg-[var(--success)] rounded-lg shadow-lg"
+            >
+              Next
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Result Section Here -->
+    <section id="Result" class="w-screen h-screen bg-[var(--background)]">
+      <div
+        id="welcome-section-container"
+        class="w-screen h-screen grid place-content-center"
+      >
+        <div
+          id="result-container"
+          class="grid place-content-center w-[60vw] h-[80vh] rounded-lg bg-[var(--primary)]"
+        >
+          <!-- Reslut heading here -->
+          <div
+            id="heading"
+            class="font-semibold text-2xl text-center mb-8 justify-center align-center"
+          >
+            <h2>Your scored :</h2>
+            <h2 id="score" class="text-4xl my-12">5 / 10</h2>
+          </div>
+
+          <!-- Let's start button here -->
+          <div id="start-btn-container" class="m-auto">
+            <button
+              id="start-btn"
+              class="py-2 px-4 bg-[var(--success)] rounded-lg shadow-lg m-auto"
+            >
+              Another Round
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+</html>
