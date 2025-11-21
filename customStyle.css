@@ -38,3 +38,18 @@
   background: #444;
   border-radius: 4px;
 }
+
+#options button {
+  background-color: var(--secondary);
+}
+
+#options button:hover {
+  opacity: 70%;
+  background-color: grey;
+}
+
+#sidebar-list li {
+  padding: 1rem;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}

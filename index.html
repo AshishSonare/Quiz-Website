@@ -10,7 +10,7 @@
   </head>
   <body class="overflow-x-hidden">
     <!-- Welcome Section here -->
-    <section id="welcome" class="bg-[var(--background)] hidden">
+    <section id="welcome" class="bg-[var(--background)]">
       <div
         id="welcome-section-container"
         class="w-screen h-screen grid place-content-center"
@@ -37,29 +37,27 @@
             </button>
           </div>
         </div>
-
-        <dialog id="quiz-subject" class="m-auto p-8 rounded-lg">
-          <div
-            id="topics-container"
-            class="grid place-content-center gap-8 h-fit w-fit"
-          >
-            <h2 class="text-6xl md:whitespace-nowrap">
-              Choose your Quiz topic from below.
-            </h2>
-
-            <div id="topic-container" class="grid md:grid-cols-2 gap-4">
-              <div id="topic" class="bg-[var(--primary)]">Computer</div>
-              <div id="topic" class="bg-[var(--primary)]">Science</div>
-              <div id="topic" class="bg-[var(--primary)]">Geography</div>
-              <div id="topic" class="bg-[var(--primary)]">
-                General Knowledge
-              </div>
-            </div>
-            <!-- <button id="close-dialog" class="">close</button> -->
-          </div>
-        </dialog>
       </div>
     </section>
+
+    <dialog id="quiz-subject" class="m-auto p-8 rounded-lg">
+      <div
+        id="topics-container"
+        class="grid place-content-center gap-8 h-fit w-fit"
+      >
+        <h2 class="text-6xl md:whitespace-nowrap">
+          Choose your Quiz topic from below.
+        </h2>
+
+        <div id="topics" class="grid md:grid-cols-2 gap-4">
+          <div id="topic" class="bg-[var(--primary)]">Computer</div>
+          <div id="topic" class="bg-[var(--primary)]">Science</div>
+          <div id="topic" class="bg-[var(--primary)]">Geography</div>
+          <div id="topic" class="bg-[var(--primary)]">General Knowledge</div>
+        </div>
+        <!-- <button id="close-dialog" class="">close</button> -->
+      </div>
+    </dialog>
 
     <!-- Quiz Section Here -->
     <section id="Quiz" class="w-screen h-screen bg-[var(--background)] hidden">
@@ -88,7 +86,7 @@
           class="bg-[var(--primary)] w-2/3 md:w-full h-screen md:h-full fixed top-0 left-0 transform -translate-x-full transition-transform duration-300 md:translate-x-0 md:relative md:col-span-2 rounded-lg z-50 overflow-y-auto"
         >
           <ul
-            id="sidebar-items"
+            id="sidebar-list"
             class="font-semibold text-xl ml-12 mt-12 grid gap-4"
           ></ul>
         </div>
@@ -103,11 +101,13 @@
         >
           <div
             id="question"
-            class="bg-[var(--primary)] row-span-2 rounded-lg"
-          ></div>
+            class="bg-[var(--primary)] row-span-2 rounded-lg p-auto grid place-content-center"
+          >
+            <h2 id="question-element" class="text-2xl"></h2>
+          </div>
           <div
             id="options"
-            class="bg-[var(--primary)] row-span-4 rounded-lg"
+            class="bg-[var(--primary)] row-span-4 rounded-lg grid grid-cols-1 md:grid-cols-2 gap-4 p-4"
           ></div>
           <div
             id="nav-btns"
@@ -115,13 +115,13 @@
           >
             <div
               id="previous"
-              class="py-2 px-4 w-[clamp(2rem,calc(10vw+2rem),10rem)] bg-[var(--success)] rounded-lg shadow-lg"
+              class="py-2 px-4 w-[clamp(2rem,calc(10vw+2rem),10rem)] bg-[var(--success)] rounded-lg shadow-lg cursor-pointer"
             >
               Previous
             </div>
             <div
               id="next"
-              class="py-2 px-4 w-[clamp(2rem,calc(10vw+2rem),10rem)] bg-[var(--success)] rounded-lg shadow-lg"
+              class="py-2 px-4 w-[clamp(2rem,calc(10vw+2rem),10rem)] bg-[var(--success)] rounded-lg shadow-lg cursor-pointer"
             >
               Next
             </div>
@@ -131,7 +131,10 @@
     </section>
 
     <!-- Result Section Here -->
-    <section id="Result" class="w-screen h-screen bg-[var(--background)]">
+    <section
+      id="Result"
+      class="w-screen h-screen bg-[var(--background)] hidden"
+    >
       <div
         id="welcome-section-container"
         class="w-screen h-screen grid place-content-center"
@@ -152,7 +155,7 @@
           <!-- Let's start button here -->
           <div id="start-btn-container" class="m-auto">
             <button
-              id="start-btn"
+              id="anotherRound"
               class="py-2 px-4 bg-[var(--success)] rounded-lg shadow-lg m-auto"
             >
               Another Round
