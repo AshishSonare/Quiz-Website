@@ -470,7 +470,18 @@ topics.forEach((topic) => {
     currentQuizQuestions.forEach((_, index) => {
       let li = document.createElement("li");
       li.textContent = `Question ${index + 1}`;
+
+      // Add click event to update currentQuestion
+      li.addEventListener("click", () => {
+        currentQuestion = index;
+        showQuestion(); // Optional: re-render styles
+      });
+
       sidebarList.appendChild(li);
+    });
+
+    sidebarList.addEventListener("click", (item, index) => {
+      currentQuestion = index;
     });
 
     // Update the sidebarItems variable so highlighting works
@@ -540,6 +551,7 @@ function showQuestion() {
     } else {
       item.style.backgroundColor = "transparent";
     }
+    item.style.cursor = "pointer";
   });
 
   q.answers.forEach((answer, index) => {
@@ -598,4 +610,12 @@ previousBtn.addEventListener("click", () => {
 // adding functionality for another round button
 anotherRound.addEventListener("click", () => {
   dialog.showModal();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  sidebarItems.addEventListener("click", (item, index) => {
+    item.addEventListener("click", () => {
+      currentQuestion = index;
+    });
+  });
 });
