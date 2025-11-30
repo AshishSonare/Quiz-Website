@@ -474,7 +474,7 @@ topics.forEach((topic) => {
       // Add click event to update currentQuestion
       li.addEventListener("click", () => {
         currentQuestion = index;
-        showQuestion(); // Optional: re-render styles
+        showQuestion(); //  re-render the screen
       });
 
       sidebarList.appendChild(li);
